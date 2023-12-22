@@ -43,8 +43,8 @@ services:
       - gateway
       - realmocean
 
-  realmocean:
-    container_name: realmocean
+  realmocean-dev:
+    container_name: realmocean-dev
     <<: *x-logging
     image: realmocean/realmocean:dev
     ports: 
@@ -71,7 +71,7 @@ services:
       - realmocean-config:/storage/config:rw
       - realmocean-certificates:/storage/certificates:rw
       - realmocean-functions:/storage/functions:rw
-      - ./app/realmocean/realm:/usr/src/code/app/realmocean/realm
+      - ./app/realmocean/realm/system:/usr/src/code/app/realmocean/realm/system
     depends_on:
       - mariadb
       - redis
