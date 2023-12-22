@@ -43,7 +43,7 @@ services:
       - gateway
       - realmocean
 
-  realmocean-dev:
+  realmocean:
     container_name: realmocean-dev
     <<: *x-logging
     image: realmocean/realmocean:dev
