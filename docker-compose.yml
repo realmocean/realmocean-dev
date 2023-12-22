@@ -71,7 +71,7 @@ services:
       - realmocean-config:/storage/config:rw
       - realmocean-certificates:/storage/certificates:rw
       - realmocean-functions:/storage/functions:rw
-      - ./app/realmocean/realm/system:/usr/src/code/app/realmocean/realm/system
+      - ./realmocean/realm/system:/usr/src/code/app/realmocean/realm/system
     depends_on:
       - mariadb
       - redis

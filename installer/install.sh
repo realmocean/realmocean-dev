@@ -9,7 +9,7 @@ docker-compose up -d
 
 cd /install
 
-docker cp  ./app  realmocean:/usr/src/code
+docker cp  ./realmocean  realmocean:/usr/src/code/app
 
 cd /install/data
 docker-compose restart
