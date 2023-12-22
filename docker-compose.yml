@@ -1,7 +1,4 @@
-# WARNING!
-# This is a development version of THE Realmocean docker-compose.yml file.
-# Avoid using this file in your production environment.
-# We're exposing here sensitive ports and mounting code volumes for rapid development and debugging of the server stack.
+# Sadece geliştirme ortamı için kullanın
 
 x-logging: &x-logging
   logging:
