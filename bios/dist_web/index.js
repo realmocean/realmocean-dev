@@ -813,11 +813,11 @@ var MainController = /** @class */ (function (_super) {
     function MainController() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    MainController.prototype.LoadView = function () {
+    MainController.prototype.LoadBiosView = function () {
         return ((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.Text)("Hello World Me son"));
     };
     return MainController;
-}(_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIController));
+}(_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.BiosController));
 
 
 

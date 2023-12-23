@@ -1,5 +1,6 @@
 
 import {
+    BiosController,
     QueryClient,
     Text,
     UIController,
@@ -30,13 +31,10 @@ export class BiosMainController extends UIController {
     }
 }
 
-export class MainController extends UIController {
-
-    public override LoadView(): UIView {
-
-       return (
-           Text("Hello World Me son")
-       )
-
+export class MainController extends BiosController {
+    public override LoadBiosView(): UIView {
+        return (
+            Text("Hello World Me son")
+        )
     }
 }
