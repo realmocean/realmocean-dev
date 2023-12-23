@@ -1,4 +1,6 @@
 import { Text, UIController, UIRoute, UIRouteOutlet, UIRoutes, UIView } from "@tuval/forms"
+import { LayoutController } from "./LayoutController"
+import { LoginController } from "./controllers/LoginController"
 
 
 class KontDrakula extends UIController {
@@ -18,11 +20,9 @@ class AddController extends UIController {
 export const Routes = () => {
     return (
         UIRoutes(
-           /*  UIRoute('/realm', NewBiosController).children(
-               UIRoute('organization/:team_id', OrganizationController),
-                UIRoute('workspace/:project_id', WorkspaceController)
-              
-            ) */
+            UIRoute('/', LayoutController).children(
+                UIRoute('login', LoginController)
+            )
         )
     )
 }

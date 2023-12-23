@@ -758,6 +758,51 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/LayoutController.ts":
+/*!*********************************!*\
+  !*** ./src/LayoutController.ts ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "LayoutController": () => (/* binding */ LayoutController)
+/* harmony export */ });
+/* harmony import */ var _tuval_forms__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @tuval/forms */ "@tuval/forms");
+/* harmony import */ var _tuval_forms__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_tuval_forms__WEBPACK_IMPORTED_MODULE_0__);
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+var LayoutController = /** @class */ (function (_super) {
+    __extends(LayoutController, _super);
+    function LayoutController() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    LayoutController.prototype.BindRouterParams = function () {
+    };
+    LayoutController.prototype.LoadView = function () {
+        return ((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIScene)((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRouteOutlet)().width('100%').height('100%')));
+    };
+    return LayoutController;
+}(_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIController));
+
+
+
+/***/ }),
+
 /***/ "./src/MainController.tsx":
 /*!********************************!*\
   !*** ./src/MainController.tsx ***!
@@ -814,7 +859,7 @@ var MainController = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     MainController.prototype.LoadBiosView = function () {
-        return ((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.Text)("Hello World Me son"));
+        return ((0,_Routes__WEBPACK_IMPORTED_MODULE_1__.Routes)());
     };
     return MainController;
 }(_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.BiosController));
@@ -835,6 +880,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _tuval_forms__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @tuval/forms */ "@tuval/forms");
 /* harmony import */ var _tuval_forms__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_tuval_forms__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _LayoutController__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./LayoutController */ "./src/LayoutController.ts");
+/* harmony import */ var _controllers_LoginController__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./controllers/LoginController */ "./src/controllers/LoginController.ts");
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -850,6 +897,8 @@ var __extends = (undefined && undefined.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+
+
 
 var KontDrakula = /** @class */ (function (_super) {
     __extends(KontDrakula, _super);
@@ -872,15 +921,75 @@ var AddController = /** @class */ (function (_super) {
     return AddController;
 }(_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIController));
 var Routes = function () {
-    return ((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoutes)(
-    /*  UIRoute('/realm', NewBiosController).children(
-        UIRoute('organization/:team_id', OrganizationController),
-         UIRoute('workspace/:project_id', WorkspaceController)
-       
-     ) */
-    ));
+    return ((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoutes)((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('/', _LayoutController__WEBPACK_IMPORTED_MODULE_1__.LayoutController).children((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('login', _controllers_LoginController__WEBPACK_IMPORTED_MODULE_2__.LoginController))));
 };
 
+
+/***/ }),
+
+/***/ "./src/controllers/LoginController.ts":
+/*!********************************************!*\
+  !*** ./src/controllers/LoginController.ts ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "LoginController": () => (/* binding */ LoginController)
+/* harmony export */ });
+/* harmony import */ var _tuval_forms__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @tuval/forms */ "@tuval/forms");
+/* harmony import */ var _tuval_forms__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_tuval_forms__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _realmocean_sdk__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @realmocean/sdk */ "@realmocean/sdk");
+/* harmony import */ var _realmocean_sdk__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_realmocean_sdk__WEBPACK_IMPORTED_MODULE_1__);
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+var LoginController = /** @class */ (function (_super) {
+    __extends(LoginController, _super);
+    function LoginController() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    LoginController.prototype.LoadView = function () {
+        var _a = (0,_realmocean_sdk__WEBPACK_IMPORTED_MODULE_1__.useCreateEmailSession)('console'), createEmailSession = _a.createEmailSession, isSuccess = _a.isSuccess, isError = _a.isError, error = _a.error;
+        var _b = (0,_realmocean_sdk__WEBPACK_IMPORTED_MODULE_1__.useGetMe)('console'), me = _b.me, isLoading = _b.isLoading;
+        return (isLoading ? (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.Fragment)() :
+            me ? (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UINavigate)('/main') :
+                (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.HStack)((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.HStack)().width(200), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.VStack)((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.TextField)(), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.TextField)(), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.Button)((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.Text)('Login'))
+                    .onClick(function () {
+                    createEmailSession({
+                        email: 'stan@bimser.com.tr',
+                        password: 'password'
+                    }, function () { return console.log('success'); });
+                }), isError && (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.Text)(error === null || error === void 0 ? void 0 : error.message), isSuccess && (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UINavigate)('/main'))));
+    };
+    return LoginController;
+}(_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIController));
+
+
+
+/***/ }),
+
+/***/ "@realmocean/sdk":
+/*!*********************************!*\
+  !*** external "realmocean$sdk" ***!
+  \*********************************/
+/***/ ((module) => {
+
+module.exports = realmocean$sdk;
 
 /***/ }),
 
