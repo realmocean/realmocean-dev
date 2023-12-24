@@ -102,6 +102,7 @@
         ]
     },
     "devDependencies": {
+        "@realmocean/sdk": "^1.0.11",
         "@tuval/cg": "^0.0.16",
         "@tuval/core": "^0.0.103",
         "@tuval/forms": "^1.0.133",
@@ -127,8 +128,5 @@
         "web-vitals": "^3.3.1",
         "webpack": "^5.74.0",
         "webpack-cli": "^4.10.0"
-    },
-    "dependencies": {
-        "@realmocean/sdk": "^1.0.8"
     }
 }

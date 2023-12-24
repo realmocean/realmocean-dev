@@ -4,11 +4,10 @@ export class LoginController extends UIController {
     public override LoadView(): UIView {
 
         const {createEmailSession, isSuccess, isError, error} = useCreateEmailSession('console');
-        const {me, isLoading} = useGetMe('console');
+        
 
         return (
-            isLoading ? Fragment() :
-            me ? UINavigate('/main') :
+           
             HStack(
                 HStack().width(200),
                 VStack(
