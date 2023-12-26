@@ -27,7 +27,7 @@ const appName = manifest.application.name;
 
 
 shell.cp('-Rf', './dist_web/enterprise.bios', './public');
-shell.cp('-Rf', './dist_web/index.js', `../realmocean/realm/system/bios.js`);
+shell.cp('-Rf', './dist_web/index.js', `../realmocean/system/bios`);
 
 
 shell.cd('..');
