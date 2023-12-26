@@ -3,6 +3,7 @@ ls -ll
 cd /install/data
 pwd
 ls -ll
+cat .env
 
 docker-compose down
 docker-compose up -d

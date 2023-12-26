@@ -826,13 +826,13 @@ services:
     networks:
       - realmocean
 
-  adminer:
-    image: adminer
-    container_name: realmocean-adminer
-    <<: *x-logging
+  phpmyadmin:
+    image: phpmyadmin
     restart: always
     ports:
-      - 9506:8080
+      - 8081:80
+    environment:
+      - PMA_ARBITRARY=1
     networks:
       - realmocean
 
