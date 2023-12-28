@@ -2,6 +2,7 @@ import { Text, UIController, UIRoute, UIRouteOutlet, UIRoutes, UIView } from "@t
 import { LayoutController } from "./LayoutController"
 import { LoginController } from "./controllers/LoginController"
 import { HomeController } from "./controllers/HomeController"
+import { SignupController } from "./controllers/SignupController"
 
 
 class KontDrakula extends UIController {
@@ -25,6 +26,7 @@ export const Routes = () => {
                 UIRoute('*', HomeController),
             ),
             UIRoute('/login', LoginController),
+            UIRoute('/signup', SignupController),
             UIRoute('/logout', LoginController)
         )
     )

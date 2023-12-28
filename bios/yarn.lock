@@ -528,10 +528,10 @@
   dependencies:
     "@react-editor-js/core" "2.1.0"
 
-"@realmocean/sdk@^1.0.11":
-  version "1.0.11"
-  resolved "https://registry.npmjs.org/@realmocean/sdk/-/sdk-1.0.11.tgz"
-  integrity sha512-KP/aF9FgrG8qpHMh5GEeQVLE0OTjxyCTQAMeTD2lFpFA7pf03ucrJ5dWW5WgSPkcqYIs3c7TwxkBY/ASZY74Gg==
+"@realmocean/sdk@^1.0.17":
+  version "1.0.17"
+  resolved "https://registry.npmjs.org/@realmocean/sdk/-/sdk-1.0.17.tgz"
+  integrity sha512-ds3JSV2Rj9eAAH2O7QdhyLfMAtW6fS8M/Fs/tJmfb2YQL9G4oyUoJCR1Hay2AB75yNisp442gLCk9HBO/8/p3Q==
   dependencies:
     "@editorjs/image" "^2.8.1"
     "@editorjs/inline-code" "^1.4.0"
