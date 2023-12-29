@@ -14,18 +14,10 @@ export class LayoutController extends UIController {
         return (
             UIScene(
                 VStack(
-                    Text(isError?.toString()),
-                    VStack(
-                        Button(
-                            Text('Logout')
-                        ).onClick(() => {
-                            deleteSessions(() => {
-                                navigate('/login');
-                            });
-                        })
-                    )
+                    UIRouteOutlet().width('100%').height('100%')
                 )
             )
+
         )
     }
 }

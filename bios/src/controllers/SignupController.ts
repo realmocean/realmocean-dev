@@ -6,6 +6,7 @@ export class SignupController extends UIController {
 
         const { createAccount, isSuccess: isCreateAccountSuccess, isError: isCreateAccountError, error: createAccountError } = useCreateAccount('console');
         const { createEmailSession, isSuccess, isError, error } = useCreateEmailSession('console');
+        
         const [userName, setUserName] = useState('');
         const [email, setEmail] = useState('');
         const [password, setPassword] = useState('');

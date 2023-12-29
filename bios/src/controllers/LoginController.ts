@@ -1,5 +1,5 @@
 import { Button, Fragment, HStack, SecureField, Text, TextField, UIController, UIImage, UINavigate, UIView, VStack, cLeading, useNavigate, useState } from "@tuval/forms";
-import { useCreateEmailSession, useGetMe } from "@realmocean/sdk";
+import { useCreateEmailSession, useCreateTeam, useGetMe } from "@realmocean/sdk";
 export class LoginController extends UIController {
     public override LoadView(): UIView {
 
@@ -8,6 +8,7 @@ export class LoginController extends UIController {
         const { me, isLoading, isError: isAccountGetError } = useGetMe('console');
 
         const { createEmailSession, isSuccess, isError, error } = useCreateEmailSession('console');
+       
         const [email, setEmail] = useState('');
         const [password, setPassword] = useState('');
 
@@ -31,17 +32,16 @@ export class LoginController extends UIController {
                                         createEmailSession({
                                             email: email,
                                             password: password
-                                        }, () => navigate('/main'))
+                                        }, () => {
+                                            navigate('/main')
+                                        })
                                     }),
                                 Text('or'),
                                 Button(
                                     Text('SignUp')
                                 ).width('50%')
                                     .onClick(() => {
-                                        createEmailSession({
-                                            email: email,
-                                            password: password
-                                        }, () => navigate('/main'))
+                                        navigate('/signup');
                                     })
                             ).height(),
                             isError && Text(error?.message),

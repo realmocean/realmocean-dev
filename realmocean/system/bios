@@ -831,8 +831,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "HomeController": () => (/* binding */ HomeController)
 /* harmony export */ });
-/* harmony import */ var _tuval_forms__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @tuval/forms */ "@tuval/forms");
-/* harmony import */ var _tuval_forms__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_tuval_forms__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _realmocean_sdk__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @realmocean/sdk */ "@realmocean/sdk");
+/* harmony import */ var _realmocean_sdk__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_realmocean_sdk__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _tuval_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @tuval/forms */ "@tuval/forms");
+/* harmony import */ var _tuval_forms__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_tuval_forms__WEBPACK_IMPORTED_MODULE_1__);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -849,16 +851,21 @@ var __extends = (undefined && undefined.__extends) || (function () {
     };
 })();
 
+
 var HomeController = /** @class */ (function (_super) {
     __extends(HomeController, _super);
     function HomeController() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     HomeController.prototype.LoadView = function () {
-        return ((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.Text)('Home'));
+        var _a = (0,_realmocean_sdk__WEBPACK_IMPORTED_MODULE_0__.useListRealms)(), realms = _a.realms, isLoading = _a.isLoading;
+        //  console.log('Error -- :' + error?.code)
+        return (isLoading ? (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.Text)('Loading...') :
+            realms.length === 0 ? (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.UINavigate)('/setup') :
+                (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.Text)('Home'));
     };
     return HomeController;
-}(_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIController));
+}(_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.UIController));
 
 
 
@@ -905,11 +912,7 @@ var LayoutController = /** @class */ (function (_super) {
     LayoutController.prototype.LoadView = function () {
         var navigate = (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.useNavigate)();
         var _a = (0,_realmocean_sdk__WEBPACK_IMPORTED_MODULE_0__.useDeleteSessions)('console'), deleteSessions = _a.deleteSessions, isError = _a.isError, isSuccess = _a.isSuccess;
-        return ((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.UIScene)((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.VStack)((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.Text)(isError === null || isError === void 0 ? void 0 : isError.toString()), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.VStack)((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.Button)((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.Text)('Logout')).onClick(function () {
-            deleteSessions(function () {
-                navigate('/login');
-            });
-        })))));
+        return ((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.UIScene)((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.VStack)((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.UIRouteOutlet)().width('100%').height('100%'))));
     };
     return LayoutController;
 }(_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.UIController));
@@ -967,13 +970,12 @@ var LoginController = /** @class */ (function (_super) {
                     createEmailSession({
                         email: email,
                         password: password
-                    }, function () { return navigate('/main'); });
+                    }, function () {
+                        navigate('/main');
+                    });
                 }), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.Text)('or'), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.Button)((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.Text)('SignUp')).width('50%')
                     .onClick(function () {
-                    createEmailSession({
-                        email: email,
-                        password: password
-                    }, function () { return navigate('/main'); });
+                    navigate('/signup');
                 })).height(), isError && (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.Text)(error === null || error === void 0 ? void 0 : error.message), isSuccess && (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UINavigate)('/main')).width('50%').padding(100)));
     };
     return LoginController;
