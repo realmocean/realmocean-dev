@@ -1,5 +1,5 @@
 import { Text, UIController, UIRoute, UIRouteOutlet, UIRoutes, UIView } from "@tuval/forms"
-import { LayoutController } from "./LayoutController"
+import { LayoutController } from "./controllers/LayoutController"
 import { LoginController } from "./controllers/LoginController"
 import { HomeController } from "./controllers/HomeController"
 import { SignupController } from "./controllers/SignupController"
