@@ -1,8 +1,8 @@
 import { EventBus } from '@tuval/core';
 import { StartBios } from '@tuval/forms';
 
-import { MainController } from './controllers/MainController';
 import './css/global.scss';
+import { Routes } from './routes/+routes';
 
 
 (function (history: any) {
@@ -28,6 +28,6 @@ window.onpopstate = (history as any).onpushstate = function (e) {
 
 
 window.addEventListener("load", (event) => {
-    StartBios(MainController);
+    StartBios(Routes());
   
 });

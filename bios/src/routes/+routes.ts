@@ -1,8 +1,8 @@
 import { Text, UIController, UIRoute, UIRouteOutlet, UIRoutes, UIView } from "@tuval/forms"
-import { LayoutController } from "./controllers/LayoutController"
-import { LoginController } from "./controllers/LoginController"
-import { HomeController } from "./controllers/HomeController"
-import { SignupController } from "./controllers/SignupController"
+import { LoginController } from "./@/login/+controller"
+import { SignupController } from "./@/signup/+controller"
+import { HomeController } from "./@/*/+controller"
+import { LayoutController } from "./@/+controller"
 
 
 class KontDrakula extends UIController {
