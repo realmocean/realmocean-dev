@@ -758,10 +758,10 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
-/***/ "./src/Routes.ts":
-/*!***********************!*\
-  !*** ./src/Routes.ts ***!
-  \***********************/
+/***/ "./src/routes/+routes.ts":
+/*!*******************************!*\
+  !*** ./src/routes/+routes.ts ***!
+  \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -770,10 +770,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _tuval_forms__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @tuval/forms */ "@tuval/forms");
 /* harmony import */ var _tuval_forms__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_tuval_forms__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _controllers_LayoutController__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./controllers/LayoutController */ "./src/controllers/LayoutController.ts");
-/* harmony import */ var _controllers_LoginController__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./controllers/LoginController */ "./src/controllers/LoginController.ts");
-/* harmony import */ var _controllers_HomeController__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./controllers/HomeController */ "./src/controllers/HomeController.ts");
-/* harmony import */ var _controllers_SignupController__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./controllers/SignupController */ "./src/controllers/SignupController.ts");
+/* harmony import */ var _login_controller__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./@/login/+controller */ "./src/routes/@/login/+controller.ts");
+/* harmony import */ var _signup_controller__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./@/signup/+controller */ "./src/routes/@/signup/+controller.ts");
+/* harmony import */ var _controller__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./@/* /+controller */ "./src/routes/@/*/+controller.ts");
+/* harmony import */ var _controller__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./@/+controller */ "./src/routes/@/+controller.ts");
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -815,16 +815,16 @@ var AddController = /** @class */ (function (_super) {
     return AddController;
 }(_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIController));
 var Routes = function () {
-    return ((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoutes)((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('/', _controllers_LayoutController__WEBPACK_IMPORTED_MODULE_1__.LayoutController).children((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('*', _controllers_HomeController__WEBPACK_IMPORTED_MODULE_3__.HomeController)), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('/login', _controllers_LoginController__WEBPACK_IMPORTED_MODULE_2__.LoginController), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('/signup', _controllers_SignupController__WEBPACK_IMPORTED_MODULE_4__.SignupController), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('/logout', _controllers_LoginController__WEBPACK_IMPORTED_MODULE_2__.LoginController)));
+    return ((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoutes)((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('/', _controller__WEBPACK_IMPORTED_MODULE_4__.LayoutController).children((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('*', _controller__WEBPACK_IMPORTED_MODULE_3__.HomeController)), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('/login', _login_controller__WEBPACK_IMPORTED_MODULE_1__.LoginController), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('/signup', _signup_controller__WEBPACK_IMPORTED_MODULE_2__.SignupController), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('/logout', _login_controller__WEBPACK_IMPORTED_MODULE_1__.LoginController)));
 };
 
 
 /***/ }),
 
-/***/ "./src/controllers/HomeController.ts":
-/*!*******************************************!*\
-  !*** ./src/controllers/HomeController.ts ***!
-  \*******************************************/
+/***/ "./src/routes/@/*/+controller.ts":
+/*!****************************************!*\
+  !*** ./src/routes/@/*_/+controller.ts ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -871,10 +871,10 @@ var HomeController = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ "./src/controllers/LayoutController.ts":
-/*!*********************************************!*\
-  !*** ./src/controllers/LayoutController.ts ***!
-  \*********************************************/
+/***/ "./src/routes/@/+controller.ts":
+/*!*************************************!*\
+  !*** ./src/routes/@/+controller.ts ***!
+  \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -921,10 +921,10 @@ var LayoutController = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ "./src/controllers/LoginController.ts":
-/*!********************************************!*\
-  !*** ./src/controllers/LoginController.ts ***!
-  \********************************************/
+/***/ "./src/routes/@/login/+controller.ts":
+/*!*******************************************!*\
+  !*** ./src/routes/@/login/+controller.ts ***!
+  \*******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -985,55 +985,10 @@ var LoginController = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ "./src/controllers/MainController.tsx":
+/***/ "./src/routes/@/signup/+controller.ts":
 /*!********************************************!*\
-  !*** ./src/controllers/MainController.tsx ***!
+  !*** ./src/routes/@/signup/+controller.ts ***!
   \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "MainController": () => (/* binding */ MainController)
-/* harmony export */ });
-/* harmony import */ var _tuval_forms__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @tuval/forms */ "@tuval/forms");
-/* harmony import */ var _tuval_forms__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_tuval_forms__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Routes */ "./src/Routes.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-var MainController = /** @class */ (function (_super) {
-    __extends(MainController, _super);
-    function MainController() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    MainController.prototype.LoadBiosView = function () {
-        return ((0,_Routes__WEBPACK_IMPORTED_MODULE_1__.Routes)());
-    };
-    return MainController;
-}(_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.BiosController));
-
-
-
-/***/ }),
-
-/***/ "./src/controllers/SignupController.ts":
-/*!*********************************************!*\
-  !*** ./src/controllers/SignupController.ts ***!
-  \*********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -1208,8 +1163,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _tuval_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_tuval_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _tuval_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @tuval/forms */ "@tuval/forms");
 /* harmony import */ var _tuval_forms__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_tuval_forms__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _controllers_MainController__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./controllers/MainController */ "./src/controllers/MainController.tsx");
-/* harmony import */ var _css_global_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./css/global.scss */ "./src/css/global.scss");
+/* harmony import */ var _css_global_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./css/global.scss */ "./src/css/global.scss");
+/* harmony import */ var _routes_routes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./routes/+routes */ "./src/routes/+routes.ts");
 
 
 
@@ -1228,7 +1183,7 @@ window.onpopstate = history.onpushstate = function (e) {
     _tuval_core__WEBPACK_IMPORTED_MODULE_0__.EventBus.Default.fire('history.changed', { url: window.location.href });
 };
 window.addEventListener("load", function (event) {
-    (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.StartBios)(_controllers_MainController__WEBPACK_IMPORTED_MODULE_2__.MainController);
+    (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.StartBios)((0,_routes_routes__WEBPACK_IMPORTED_MODULE_3__.Routes)());
 });
 
 })();
